@@ -1,0 +1,12 @@
+<!-- <p>delete-song works!</p> -->
+<div class="container">
+    <h1 mat-dialog-title>Following songs will be removed</h1>
+    <ul *ngFor="let song of selectedSongs">
+        <li>{{song.songName}} by <b>{{song.artistName}}</b></li>
+    </ul>
+    <mat-dialog-actions class="d-flex justify-content-evenly">
+        <button mat-button mat-dialog-close class="btn btn-primary" (click)="deleteSongs()">Confirm Delete Selected Songs</button>
+        <button mat-button mat-dialog-close class="btn btn-danger">Abort Deletion</button>
+    </mat-dialog-actions>
+
+</div>
