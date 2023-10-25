@@ -51,8 +51,8 @@
         </tr>
       </tbody>
     </table>
-    <mat-paginator [length]="inDisplay.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"  showFirstLastButtons="true"
-      (page)=" onChangePage($event)">
+    <mat-paginator [length]="inDisplay.length" [pageIndex]="pageIndex" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"  showFirstLastButtons="true"
+      (page)="onChangePage($event)">
     </mat-paginator>
   </div>
   <div class="d-flex flex-row m-5">

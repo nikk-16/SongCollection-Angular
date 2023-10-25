@@ -30,7 +30,7 @@ export class SongInfoService {
     const returnArray = this.songs.filter((song) =>
       song.artistName?.trim().toLowerCase().includes(artistName?.trim().toLowerCase()) && song.songName?.trim().toLowerCase().includes(songName?.trim().toLowerCase())
     );
-    console.log(returnArray);
+    // console.log(returnArray);
     return returnArray;
   }
 
@@ -58,8 +58,7 @@ export class SongInfoService {
       sorted = toSort.sort((first: Song, second: Song) => 0 - (first.durationInSeconds > second.durationInSeconds ? -1 : 1),);
     return sorted;
   }
-
-  // ort by desc order 
+  // sort by desc order 
   sortByDesc(inDisplay: Song[], sortBy: string ): Song[]{
     const toSort = inDisplay;
     let sorted: Song[] = [];

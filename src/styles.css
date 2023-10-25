@@ -19,6 +19,3 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     text-overflow: ellipsis;
 }
 
-.container{
-    width: 60vw;
-}

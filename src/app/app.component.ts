@@ -41,8 +41,9 @@ export class AppComponent {
       songName: new FormControl(''),
       artistName: new FormControl(''),
     });
-    this.searchForm.valueChanges.subscribe((e) => {
+    this.searchForm.valueChanges.subscribe((e) => {  // check constant changes in the forms and filter accordingly
       this.inDisplay = this.songServices.filterOnSongs(e.songName as string, e.artistName as string);
+      this.pageIndex = 0;  // pageIndex is 0 as maybe after filtering we have less songs to display so we need to start from the first page
       this.toDisplay = this.songServices.displaySongs(this.pageIndex, this.pageSize, this.inDisplay);
     });
   }
@@ -70,7 +71,7 @@ export class AppComponent {
   }
   sortByDesc(sortBy: string){
     this.toDisplay = this.songServices.displaySongs(this.pageIndex, this.pageSize, this.songServices.sortByDesc(this.inDisplay, sortBy));
-    console.log(this.inDisplay);
+    // console.log(this.inDisplay);
   }
   noSort(){
     console.log(this.inDisplay);
@@ -84,7 +85,6 @@ export class AppComponent {
 
   // dialog for delete song
   openDialogForDeleteSongsComponent(){
-    console.log('dialog opens')
     let dialogRef = this.dialog.open(DeleteSongComponent, {
       width:'60vw'
     });
@@ -95,8 +95,10 @@ export class AppComponent {
       this.toDisplay = this.songServices.displaySongs(this.pageIndex, this.pageSize, this.inDisplay);
     });
   }
-
+  // dialog to add song
   openDialogForAddSongsComponent(){
-    this.dialog.open(AddSongComponent)
+    this.dialog.open(AddSongComponent, {
+      width:'60vw'
+    })
   }
 }
