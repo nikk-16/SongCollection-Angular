@@ -16,7 +16,7 @@ export class DeleteSongComponent {
   }
 
   deleteSongs(){
-    if(this.songInfoService.selectedSong.length > 0){
+    if(this.selectedSongs.length > 0){
       this.songInfoService.deleteSelectedSongs();
       alert("Selected Songs Deleted");
     }

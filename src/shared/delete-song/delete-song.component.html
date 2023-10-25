@@ -5,7 +5,7 @@
         <li>{{song.songName}} by <b>{{song.artistName}}</b></li>
     </ul>
     <mat-dialog-actions class="d-flex justify-content-evenly">
-        <button mat-button mat-dialog-close class="btn btn-primary" (click)="deleteSongs()">Confirm Delete Selected Songs</button>
+        <button mat-button mat-dialog-close [disabled] ="(selectedSongs.length <= 0) ? true : false" class="btn btn-primary" (click)="deleteSongs()">Confirm Delete Selected Songs</button>
         <button mat-button mat-dialog-close class="btn btn-danger">Abort Deletion</button>
     </mat-dialog-actions>
 
